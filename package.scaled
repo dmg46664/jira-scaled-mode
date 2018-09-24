@@ -1,0 +1,10 @@
+   name: jira-scaled-mode
+ source: git:https://github.com/dmg46664/jira-scaled-mode.git
+version: 1.0
+descrip: Jira scaled mode
+ weburl: https://github.com/dmg46664/jira-scaled-mode
+license: New BSD
+ depend: git:https://github.com/scaled/xml-mode.git
+ depend: git:https://github.com/scaled/javascript-mode.git
+ depend: git:https://github.com/scaled/textmate-grammar.git
+ module: test
