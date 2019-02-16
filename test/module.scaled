@@ -1,2 +1,1 @@
-depend: git:https://github.com/scaled/scaled.git#editor
-depend: mvn:junit:junit:4.12
+depend: git:https://github.com/dmg46664/jira-scaled-mode.git

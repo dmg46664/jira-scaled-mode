@@ -1,0 +1,32 @@
+/**
+ * Styles for jira-scaled-mode.
+ */
+
+.jiraCssTick {
+  -fx-bg-fill: LightGreen;
+}
+
+
+/** Nothing below here is used */
+
+.codeInvalidFace {
+  -fx-fill: DarkOrange;
+  -fx-font-weight: bold;
+}
+
+.blockDelimFace {
+  -fx-underline: true;
+}
+
+.blockErrorFace {
+  -fx-fill: Red;
+}
+
+.activeChoiceFace {
+  -fx-bg-fill: DarkSlateBlue;
+}
+
+/** TODO: from emacs
+ '(show-paren-match ((t (:background "#330"))))
+ '(show-paren-mismatch ((t (:background "red"))))
+*/

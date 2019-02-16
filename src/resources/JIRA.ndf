@@ -1,0 +1,10 @@
+# For more see NDF.ndf
+name: JIRA formatting
+scopeName: source.jira
+repository:
+patterns:
+ single:
+  # Tick comment
+  name: comment.line.ndf
+  pattern: (\(\/\))
+  caps: 1=tick.ndf
