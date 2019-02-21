@@ -7,6 +7,11 @@
 }
 
 
+.jiraCssCross {
+  -fx-bg-fill: Red;
+}
+
+
 /** Nothing below here is used */
 
 .codeInvalidFace {

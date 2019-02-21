@@ -4,7 +4,10 @@ scopeName: source.jira
 repository:
 patterns:
  single:
-  # Tick comment
-  name: comment.line.ndf
+  name: tick.ndf
   pattern: (\(\/\))
   caps: 1=tick.ndf
+ single:
+  name: cross.ndf
+  pattern: (\([x|X]\))
+  caps: 1=cross.ndf

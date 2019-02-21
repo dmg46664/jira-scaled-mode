@@ -15,6 +15,7 @@ class JiraGrammarPlugin extends GrammarPlugin {
 
   override def effacers = List(
     effacer("tick", jiraCssTick),
+    effacer("cross", jiraCssCross)
   )
 
   override def syntaxers = List(

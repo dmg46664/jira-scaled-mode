@@ -1,36 +1,3 @@
-
-
-## Scaled basics
-
-https://github.com/scaled/scaled
-
-Scaled is like Emacs. For an overview start here:
-https://www.youtube.com/watch?v=B6jfrrwR10k
-
-## Using Scaled
-At the moment Scaled's "UI" follows Emacs where that makes sense (pretty much all of the basic editing key bindings). Extensions like project-mode introduce new interactions and I'm not making an effort to model those on the myriad hodge-podge Emacs IDE-like extensions that exist, I'm just trying to come up with sensible bindings.
-At any time, you can invoke M-x describe-mode (or C-h m) to see all of the key bindings and config vars for the the active major and minor modes. You can cross-reference that with the Emacs reference card to see basic editing commands organized more usefully than alphabetic order.
-
-HELM is better than minibuffer: https://github.com/emacs-helm/helm/wiki#install
-https://www.youtube.com/watch?v=k78f8NYYIto
-
-Okay...
-Remember that on a mac, M (as in M-x ) is holding the command key and then pressing x.
-
-So try M-x describe-mode
-
-You’ll see all the commands available in the major AND minor modes.
-
-Perhaps you’ve started typing this and want to quit the popup : C-g
-
-
-We want to search for something so C-s and type in the buffer as that’s what we want to search. Search a couple more times to navigate forward.
-
-Now describe-mode has opened up a new buffer (the original blank screen is still there). Hopefully we’ve found the  switch-to-buffer binding and run that shortcut.
-
-* Opening files:
-  * C-x f
-
 ## How to create a new grammar mode:
 
 Hopefully this is the most basic tutorial TODO confirm.
@@ -195,6 +162,30 @@ Given that previously we were using `source.xml`, the grammar plugin used was th
 *Q. Does that mean a major mode can't register and use two distinct grammars?*
  TODO it would seem so?
 
+## Making the grammar unhighlight
+
+In this tutorial so far you've created a major mode that highlights a Jira markup tick in green :thumbsup:
+However you'll notice that when you remove any character from the tick it doesn't go back to being regular text :thumbsdown:
+
+This is because Scaled has created an `effacer` (handler) to mark blocks of text with css as you've defined.
+TODO confirm the above.
+
+However there is no callback registered to remove the css.
+*Q. Why?*
+
+Scaled has it's own implementation of a text mate parser available here: https://github.com/scaled/textmate-grammar/
+It does not rely on any other text mate libraries.
+
+It's worth becoming a little aquainted to the processing that this library does.
+
+* What is a `scope`? It represents every element of a match of a piece of text down an AST. I.e.
+** We're in code -> in a comment block -> at the beginning of a comment block.
+
+
+You can see more examples here:
+scaled.grammar.GrammarTest
+
+
 
 ## Useful EMACS guides
 
@@ -336,8 +327,47 @@ Make edits to code.
 Daniels-MacBook-Pro:bin dmg46664$ spam build scaled
 ```
 
+
+
+## Scaled basics
+
+https://github.com/scaled/scaled
+
+Scaled is like Emacs. For reasons to use emacs and an introduction see:
+https://www.youtube.com/watch?v=B6jfrrwR10k
+
+
+## Copied intro instructions:
+
+At the moment Scaled's "UI" follows Emacs where that makes sense (pretty much all of the basic editing key bindings). Extensions like project-mode introduce new interactions and I'm not making an effort to model those on the myriad hodge-podge Emacs IDE-like extensions that exist, I'm just trying to come up with sensible bindings.
+At any time, you can invoke M-x describe-mode (or C-h m) to see all of the key bindings and config vars for the the active major and minor modes. You can cross-reference that with the Emacs reference card to see basic editing commands organized more usefully than alphabetic order.
+
+## Expanding on simple instructions
+
+Okay...
+Remember that on a mac, M (as in M-x ) is holding the command key and then pressing x.
+
+So try M-x describe-mode
+
+You’ll see all the commands available in the major AND minor modes.
+
+Perhaps you’ve started typing this and want to quit the popup : C-g
+
+We want to search for something so C-s and type in the buffer as that’s what we want to search. Search a couple more times to navigate forward.
+
+Now describe-mode has opened up a new buffer (the original blank screen is still there). Hopefully we’ve found the  switch-to-buffer binding and run that shortcut.
+
+* Opening files:
+  * C-x f
+
+
 ## Spacemacs help
 
 (Remember to type the space as below)
 
 M-x help-with-tutorial
+
+## Potential improvements
+
+HELM is better than minibuffer: https://github.com/emacs-helm/helm/wiki#install
+https://www.youtube.com/watch?v=k78f8NYYIto
